@@ -5,7 +5,7 @@ genai.configure(api_key=os.getenv("AIzaSyAASdFKKusjM-E0qtF8MNYUfelklM_eGV0"))
 
 def analyze_resume(text):
     try:
-       model = genai.GenerativeModel("models/text-bison-001")
+        model = genai.GenerativeModel("models/gemini-1.5-flash")
 
         response = model.generate_content(
             f"""
@@ -23,3 +23,4 @@ def analyze_resume(text):
 
     except Exception as e:
         return f"Error: {str(e)}"
+    
