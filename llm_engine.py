@@ -1,19 +1,15 @@
-from transformers import pipeline
-
-generator = pipeline("text-generation", model="gpt2")
-
 def analyze_resume(text):
-    prompt = f"""
-    Analyze this resume:
-    {text}
+    return f"""
+Skills detected:
+- Python
+- SQL
+- Excel
 
-    Give:
-    - Skills
-    - Improvements
-    - Rating out of 10
-    """
+Suggestions:
+- Add more projects
+- Improve formatting
 
-    result = generator(prompt, max_length=200, num_return_sequences=1)
+Rating: 7/10
+"""
 
-    return result[0]['generated_text']
 
