@@ -1,18 +1,18 @@
 import google.generativeai as genai
 import os
 
-genai.configure(api_key=os.getenv("AIzaSyAASdFKKusjM-E0qtF8MNYUfelklM_eGV0"))
-
-model = genai.GenerativeModel("gemini-pro")
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
 def analyze_resume(text):
     try:
+        model = genai.GenerativeModel(model_name="models/gemini-1.5-flash")
+
         response = model.generate_content(
             f"""
             Analyze this resume and provide:
-            1. Key skills
-            2. Improvements
-            3. Rating out of 10
+            - Key skills
+            - Improvements
+            - Rating out of 10
 
             Resume:
             {text}
