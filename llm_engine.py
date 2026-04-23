@@ -1,11 +1,11 @@
 import google.generativeai as genai
 import os
 
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+genai.configure(api_key=os.getenv("AIzaSyAASdFKKusjM-E0qtF8MNYUfelklM_eGV0"))
 
 def analyze_resume(text):
     try:
-        model = genai.GenerativeModel(model_name="models/gemini-1.5-flash")
+       model = genai.GenerativeModel("models/text-bison-001")
 
         response = model.generate_content(
             f"""
